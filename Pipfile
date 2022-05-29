@@ -9,6 +9,8 @@ psycopg2 = "*"
 whitenoise = "*"
 python-decouple = "*"
 dj-database-url = "*"
+pillow = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
