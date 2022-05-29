@@ -1,11 +1,29 @@
+{% load bootstrap4 %}
+{% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>Unsplash Me</title>
+  {% if title %}
+    <title>Sunsplash | {{title}}</title>
+  {% else %}
+    <title> Sunsplash </title>
+  {% endif %}
+
+  {% block styles %}
+    {% bootstrap_css %}
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Roboto:300,400,700|PT+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom Theme files -->
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  {% endblock %}
+
 </head>
 <body>
 

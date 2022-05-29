@@ -11,6 +11,7 @@ python-decouple = "*"
 dj-database-url = "*"
 pillow = "*"
 python-dotenv = "*"
+django-bootstrap-v5 = "*"
 
 [dev-packages]
 
