@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="banner">
+  <div class="">
+    <h1 id="title">Unsplash Me</h1>
+    <h3 id="description">Search for an image. If you can't find it here, it's probably not here</h3>
+    <form action="{% url 'search_image' %}" role="search">
+      <div>
+        <input type="text" class="form-control" placeholder="&#xf3ee; Search for an image">
+      </div>
+      <small>Trending searches: puppies, not cats</small>
+    </form>
+    <a href="">See More</a>
+  </div>
+</div>
