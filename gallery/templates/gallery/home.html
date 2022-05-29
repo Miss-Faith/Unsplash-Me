@@ -8,10 +8,30 @@
     <h3 id="description">Search for an image. If you can't find it here, it's probably not here</h3>
     <form action="{% url 'search_image' %}" role="search">
       <div>
-        <input type="text" class="form-control" placeholder="&#xf3ee; Search for an image">
+        <input type="text" class="form-control" placeholder="&#xf3ee; Search for an image by category">
       </div>
       <small>Trending searches: puppies, not cats</small>
     </form>
-    <a href="">See More</a>
+    <a href="#gallery">See More</a>
+  </div>
+</div>
+
+<div>
+  <div class="row" id="gallery">
+    {% for image in images %}
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+        <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%"></a>
+        <img src="{{image.image.cdn_url}}" href="" class="image" alt="Image" >
+      </div>
+    {% empty %}
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <img src="{% static 'images/no-image.jpg' %}" alt="No Image">
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6">
+          <h2 class="text-center"> No images are available now. Feel free to share with us.</h2>
+      </div>
+      </div>
+    {% endfor %}
   </div>
 </div>
