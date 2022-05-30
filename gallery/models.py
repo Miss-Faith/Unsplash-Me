@@ -10,6 +10,9 @@ class Location(models.Model):
         locations = Location.objects.all()
         return locations
 
+    def __str__(self):
+        return self.name
+
     def update_location(self, update):
         self.name = update
         self.save()
@@ -20,11 +23,12 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()
 
-    def __str__(self):
-        return self.name
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
     def save_category(self):
         self.save()
@@ -36,8 +40,6 @@ class Category(models.Model):
         self.name = update
         self.save()
 
-    def __str__(self):
-        return self.name
 
 class Image(models.Model):
     image = models.ImageField(upload_to='images/')
