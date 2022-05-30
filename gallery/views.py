@@ -24,20 +24,15 @@ def single(request,category_name,image_id):
     return render(request,"gallery/single.html",{'title':title,"image":image, "locations":locations, "category":category})
 
 def search_image(request):
-    title = 'Search'
-    categories = Category.objects.all()
-    locations = Location.objects.all()
-    if 'category' in request.GET and request.GET['category']:
-        search_term = request.GET.get('category')
-        searched_images = Image.search_by_category(search_term)
-        message = f"{search_term}"
-        print(search_term)
-        print(found_results)
-
-        return render(request, 'gallery/search.html',{'title':title,'images': searched_images, 'message': message, 'categories': categories, "locations":locations})
+    if 'imagesearch' in request.GET and request.GET["imagesearch"]:
+        category = request.GET.get("imagesearch")
+        searched_images = Image.search_by_category(category)
+        message = f"{category}"
+        print(searched_images)
+        return render(request, 'gallery/search.html', {"message": message, "images": searched_images})
     else:
-        message = 'You haven't searched for any image category'
-        return render(request, 'gallery/search.html',{"message": message})
+        message = "You haven't searched for any image category"
+        return render(request, 'gallery/search.html', {"message": message})
 
 
 def location_filter(request, location):
