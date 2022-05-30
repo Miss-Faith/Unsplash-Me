@@ -1,7 +1,7 @@
 # [Unsplash Me](https://github.com/Miss-Faith/Unsplash-Me)
 #### By [Faith Mwangi](https://github.com/miss-faith)
 ### Description
-A landing page that provides users with blogs. A User is able to create an account, update their profile, add new blogs, delete or update their blogs and comment on existing blogs.
+A landing page that provides users with images. A User is able to view images, search images by category, view images by location and copy a shareable link to the images.
 ## Site
 [Unsplash Me](https://unsplashme.herokuapp.com/)
 ### Setup Requirements
