@@ -9,7 +9,7 @@ def home(request):
     locations = Location.objects.all()
     title = 'Unsplash Me'
 
-    return render(request, 'home.html', {'title':title, 'images':images, 'locations':locations})
+    return render(request, 'gallery/home.html', {'title':title, 'images':images, 'locations':locations})
 
 def single_category(request,category_name,image_id):
     # images = Image.get_image_by_id(image_id)
@@ -21,7 +21,7 @@ def single_category(request,category_name,image_id):
         image = Image.objects.get(id = image_id)
     except DoesNotExist:
         raise Http404()
-    return render(request,"single.html",{'title':title,"image":image, "locations":locations, "image_category":image_category})
+    return render(request,"gallery/single_category.html",{'title':title,"image":image, "locations":locations, "image_category":image_category})
 
 def search_image(request):
     title = 'Search'
@@ -34,10 +34,10 @@ def search_image(request):
         print(search_term)
         print(found_results)
 
-        return render(request, 'search.html',{'title':title,'images': found_results, 'message': message, 'categories': categories, "locations":locations})
+        return render(request, 'gallery/search.html',{'title':title,'images': found_results, 'message': message, 'categories': categories, "locations":locations})
     else:
         message = 'You havent searched yet'
-        return render(request, 'search.html',{"message": message})
+        return render(request, 'gallery/search.html',{"message": message})
 
 
 def location_filter(request, image_location):
@@ -45,5 +45,5 @@ def location_filter(request, image_location):
     location = Location.get_location_id(image_location)
     images = Image.filter_by_location(image_location)
     title = f'{location} Photos'
-    return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations, 'location':location})
+    return render(request, 'gallery/location.html', {'title':title, 'images':images, 'locations':locations, 'location':location})
 
