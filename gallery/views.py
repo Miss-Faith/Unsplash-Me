@@ -11,32 +11,33 @@ def home(request):
 
     return render(request, 'gallery/home.html', {'title':title, 'images':images[::-1], 'locations':locations})
 
-def single(request,category_name,image_id):
-    # images = Image.get_image_by_id(image_id)
-    title = 'Image'
-    locations = Location.objects.all()
-    # category = Category.get_category_id(id = category)
-    category = Image.objects.filter(category__name = category_name)
-    try:
-        image = Image.objects.get(id = image_id)
-    except DoesNotExist:
-        raise Http404()
-    return render(request,"gallery/single.html",{'title':title,"image":image, "locations":locations, "category":category})
+# def single(request,category_name,image_id):
+#     # images = Image.get_image_by_id(image_id)
+#     title = 'Image'
+#     locations = Location.objects.all()
+#     # category = Category.get_category_id(id = category)
+#     category = Image.objects.filter(category__name = category_name)
+#     try:
+#         image = Image.objects.get(id = image_id)
+#     except DoesNotExist:
+#         raise Http404()
+#     return render(request,"gallery/single.html",{'title':title,"image":image, "locations":locations, "category":category})
 
 def search_image(request):
+    locations = Location.objects.all()
     if 'imagesearch' in request.GET and request.GET["imagesearch"]:
         category = request.GET.get("imagesearch")
         searched_images = Image.search_by_category(category)
         message = f"{category}"
-        return render(request, 'gallery/search.html', {"message": message, "images": searched_images})
+        return render(request, 'gallery/search.html', {"message": message, "images": searched_images, 'locations':locations})
     else:
         message = "You haven't searched for any image category"
-        return render(request, 'gallery/search.html', {"message": message})
+        return render(request, 'gallery/search.html', {"message": message, 'locations':locations})
 
 
 def image_location(request, location):
     locations = Location.objects.all()
     images = Image.filter_by_location(location)
     title = f'{location} Photos'
-    return render(request, 'gallery/location.html', {'title':title, 'images':images, 'location':location})
+    return render(request, 'gallery/location.html', {'title':title, 'images':images, 'locations':locations})
 
