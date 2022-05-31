@@ -6,8 +6,8 @@ from django.conf.urls.static import static
 urlpatterns=[
     path('',views.home,name = 'home'),
     path('search/', views.search_image, name='search'),
-    path('location/(<image_location>\d+)', views.location_filter, name='location'),
-    path('image/(<category_name>\w+)/(<image_id>\d+)',views.single,name = 'single')
+    path('location/<location>', views.image_location, name='location'),
+    path('image/<category_name>/<image_id>',views.single,name = 'single')
 ]
 
 if settings.DEBUG:

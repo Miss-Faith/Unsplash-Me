@@ -34,9 +34,8 @@ def search_image(request):
         return render(request, 'gallery/search.html', {"message": message})
 
 
-def location_filter(request, location):
+def image_location(request, location):
     locations = Location.objects.all()
-    location = Location.get_location_id(location)
     images = Image.filter_by_location(location)
     title = f'{location} Photos'
     return render(request, 'gallery/location.html', {'title':title, 'images':images, 'location':location})

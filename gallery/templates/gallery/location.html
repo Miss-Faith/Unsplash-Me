@@ -1,9 +1,10 @@
 {%extends 'base.html'%}
+{%load static%}
 {% block content %}
 
 <!-- Landing Page -->
 <div class="banner">
-  <h2>The images are located in {{location.name}}</h2>
+  <h2>Images in {{location.name}} location</h2>
   <div class="container imageloc">
     <form class="text-center form mr-sm-2" action='/search' role="search">
       <input class="form-control mr-2" type="search" placeholder="Search Category" name="imagesearch" aria-label="Search">
@@ -20,7 +21,7 @@
   <div class="row">
   {% for image in images %}
   <!-- displaying images-->
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+    <div class="card col-xs-6 col-sm-6 col-md-4 col-lg-3">
       <div class="portfolio-wrap ">
         <div class="portfolio-wrap hovereffect">
           <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%">
@@ -36,7 +37,7 @@
   </div>
     <div class="row">
       <div class="col-sm-6 col-md-6 col-lg-6">
-        <img src="{% static 'images/image (35).jpg' %}" alt="" class = "oops">
+        <img src="{% static 'images/no-image.jpg' %}" alt="" class = "oops">
       </div>
       <div class="col-sm-6 col-md-6 col-lg-6">
         <h2 class="text-center"> Sorry no images for {{image.location.name}}. Images are comming soon.</h2>
