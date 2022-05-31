@@ -124,7 +124,8 @@ min-height: 300px;
 }
 
 .btn-home {
-  margin-left: 60vh;
+  margin-left: 68vh;
+  font-size: 3vh;
 }
 .btn-dropdown {
   margin-left: 10vh;
@@ -132,4 +133,8 @@ min-height: 300px;
 
 .dropitems {
   font-family: 'Font Awesome 5 Brands'
+}
+
+nav {
+  color: rgba(0, 0, 0, 0.46);
 }
