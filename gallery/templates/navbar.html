@@ -6,11 +6,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <div>
-          <li class="nav-item active"><a class="nav-link" href="/"> Home <span class="sr-only"></span></a></li>
+          <li class="nav-item btn-home active"><a class="nav-link" href="/"> Home <span class="sr-only"></span></a></li>
         </div>
         <div class="dropdown show">
-          <a class="nav-link btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Location</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="nav-link btn btn-dropdown dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Location</a>
+          <div class="dropdown-menu dropitems" aria-labelledby="dropdownMenuLink">
             {% for location in locations %}
             <a class="dropdown-item" id="dropdownMenuLink" href="/location/{{location.name}}">{{location.name}}</a>
             {% endfor %}
