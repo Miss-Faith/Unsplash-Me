@@ -18,10 +18,10 @@
 
 <div class="container wrap">
     <!-- Looping through images -->
-    <div class="row d-flex justify-content-around">
+    <div class="row d-flex justify-content-around align-items-center">
     {% for image in images %}
         <!-- displaying images -->
-        <div class="card col-xs-6 col-sm-6 col-md-4 col-lg-3" data-toggle="modal" data-target="#{{image.id}}">
+        <div class="card1 col-xs-6 col-sm-6 col-md-4 col-lg-3" data-toggle="modal" data-target="#{{image.id}}">
             <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%"></a>
             <img src="{{image.image.url}}" href="" alt="{{image.name}}" class="card-img" >
         </div>
@@ -29,9 +29,9 @@
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-sm-6 col-md-6 col-lg-6">
-            <img src="{% static 'images/image (35).jpg' %}" alt="" class = "Oooops">
+            <img src="{% static 'images/no-image.jpg' %}" alt="Ooooops" class = "card-img">
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="card1 col-sm-6 col-md-6 col-lg-6">
             <h2 class="text-center"> Sorry no image for {{message}} category. We will upload more images soon.</h2>
         </div>
     </div>

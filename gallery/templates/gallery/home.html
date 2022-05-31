@@ -19,9 +19,9 @@
 <br>
 
 <div class="container-fluid">
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-around align-items-center">
     {% for image in images %}
-      <div class="card  col-xs-10 col-sm-10 col-md-5 col-lg-3 border-0" data-toggle="modal" data-target="#{{image.id}}">
+      <div class="card1  col-xs-10 col-sm-10 col-md-5 col-lg-3 border-0" data-toggle="modal" data-target="#{{image.id}}">
         <img src="{{image.image.url}}" href="" alt="{{image.name}}" class="card-img" >
       </div>
     {% empty %}

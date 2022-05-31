@@ -2,6 +2,7 @@ body{
   font-family: 'Font Awesome 5 Brands';
   font-size: 1.2vw;
   background-color: #d18a19;
+  width: 100vw;
 }
 
 .footer {
@@ -117,7 +118,7 @@ min-height: 300px;
   width: 70%;
 }
 
-.card {
+.card1 {
   padding: 0px;
   margin: 10px;
   margin-bottom: 20px;
