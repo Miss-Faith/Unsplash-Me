@@ -28,7 +28,6 @@ def search_image(request):
         category = request.GET.get("imagesearch")
         searched_images = Image.search_by_category(category)
         message = f"{category}"
-        print(searched_images)
         return render(request, 'gallery/search.html', {"message": message, "images": searched_images})
     else:
         message = "You haven't searched for any image category"

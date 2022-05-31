@@ -1,20 +1,17 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
 
-<div class="banner">
-  <div class="">
-    <h1 id="title">Unsplash Me</h1>
-    <h3 id="description">Search for an image. If you can't find it here, it's probably not here</h3>
-    <form action="{% url 'search_image' %}" role="search">
-      <div>
-        <input type="text" class="form-control" placeholder="&#xf3ee; Search for an image by category">
-      </div>
-      <small>Trending searches: puppies, not cats</small>
-    </form>
-    <a href="#gallery">See More</a>
-  </div>
+<div class="container-fluid banner">
+  <h1 class="text-center">Unsplash Me</h1>
+  <h6 id="description">Search for an image. If you can't find it here, it's probably not here</h6>
+  <form class="text-center form mr-sm-2" action='/search' role="search">
+    <input class="form-control mr-2" type="search" placeholder="Search Category" name="imagesearch" aria-label="Search">
+    <small>Trending searches: Food, </small>
+    <br>
+    <button class="btn btn-info btn-md my-2 my-sm-0" type="submit">Search</button>
+    <br>
+  </form>
 </div>
 
 <div>
@@ -41,7 +38,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="deleteModalLabel">Image Post</h5>
+            <h5 class="modal-title" id="deleteModalLabel">{{image.name}}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -52,13 +49,13 @@
                 <a href=""><img id="img{{image.id}}" src="{{image.image.url}}" class="img-thumbnail" alt="Image" style="cursor:pointer"></a>
               </div>
               <div class="col-md-3">
-                <h3 class = "desc">Location</h3>
+                <h5 class = "desc">Location</h5>
                 <p>{{image.location.name}}</p>
-                <h3 class = "desc">Category</h3>
+                <h5 class = "desc">Category</h5>
                 <p>{{image.category.name}}</p>
               </div>
               <div>
-                <h3 class="desc">{{image.name}}</h3>
+                <h5 class="desc">Description</h5>
                 <p class="desc">{{image.description}}</p>
               </div>
             </div>
