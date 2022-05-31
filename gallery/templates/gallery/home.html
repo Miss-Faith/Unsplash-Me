@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+{% load static%} 
 
 {% block content %}
+
+{{block.super}}
 
 <div class="text-center container-fluid banner">
   <br><br><br>
@@ -51,8 +54,8 @@
             <p class="modal-text">Location: <a href="/location/{{image.location}}">{{image.location}}</a></p>
           </div>
             <div class="modal-footer">
-              <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="{{image.id}}.url">
-              <button type="button" class="btn btn-sm btn-secondary" onclick="copy('img{{image.id}}')">Copy Link</button>
+              <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="content">
+              <button type="button" class="btn btn-sm btn-secondary" onclick="copy()">Copy Link</button>
               <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

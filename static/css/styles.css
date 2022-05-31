@@ -42,10 +42,6 @@ button a:hover {
 }
 
 
-/* End of Navbar Styles */
-
-/* Styles for the home page*/
-
 form.form{
   width: 70%;
   border-radius: 0px;
@@ -71,7 +67,6 @@ input.form-control{
   position: relative;
 }
 
-
 small{
   color: #c3c3c3;
 }
@@ -87,6 +82,7 @@ background-size:cover;
 min-height: 300px;
 
 }
+
 .cover{
   min-height: 300px;
   width: inherit;
@@ -131,7 +127,7 @@ min-height: 300px;
   margin-left: 60vh;
 }
 .btn-dropdown {
-  margin-left: 20vh;
+  margin-left: 10vh;
 }
 
 .dropitems {
